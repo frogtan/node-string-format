@@ -10,6 +10,10 @@ will output
     Hi, guys, I'm node-string-format
 
  - placeholder with index
-	 format("{0} {1}", "node-string-format", "v0.0.1");
+
+       format("{0} {1}", "node-string-format", "v0.0.1");
+
  - decode left or right curly brace
-   format("{{{0}}}", "node-string-format");
+
+       format("{{{0}}}", "node-string-format");
+
