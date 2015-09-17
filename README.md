@@ -11,7 +11,7 @@ will output
 
  - placeholder with index
 
-       format("{0} {1}", "node-string-format", "v0.0.1");
+    format("{0} {1}", "node-string-format", "v0.0.2");
 
  - decode left or right curly brace
 

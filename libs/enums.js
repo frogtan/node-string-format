@@ -4,6 +4,7 @@ var states = {
     placeholderOrDecodeLeftCurlyBraceStart : 2,
     placeholderIndex : 4,
     decodeRightCurlyBraceStart : 5,
+    placeholderName : 6,
 
     error : -1
 };
@@ -12,7 +13,8 @@ var tokenTypes = {
     normalString : 0,
     decodeLeftCurlyBrace : 1,
     decodeRightCurlyBrace: 2,
-    placeholder : 3,
+    placeholderIndex : 3,
+    placeholderName : 4,
 
     unknown : -1
 };

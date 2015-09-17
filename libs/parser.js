@@ -42,8 +42,11 @@ module.exports = function(){
                         else if(helper.isNum(c)){
                             state = states.placeholderIndex;
                         }
+                        else if(helper.isAlpha(c) || helper.isDollarSymbol(c) || helper.isUnderscore(c)){
+                            state = states.placeholderName;
+                        }
                         else{
-                            throw new Error("parse error at " + (this.index - 1));
+                            throw new Error("parse error at position " + (this.index - 1));
                         }
                         break;
                     case states.decodeRightCurlyBraceStart:
@@ -53,7 +56,7 @@ module.exports = function(){
                             toContinue = false;
                         }
                         else{
-                            throw new Error("parse error at " + (this.index - 1));
+                            throw new Error("parse error at position " + (this.index - 1));
                         }
                         break;
                     case states.normalString:
@@ -74,7 +77,21 @@ module.exports = function(){
                             toContinue = false;
 
                             state = states.start;
-                            tokenType = tokenTypes.placeholder;
+                            tokenType = tokenTypes.placeholderIndex;
+                        }
+                        break;
+                    case states.placeholderName:
+                        if(helper.isAlpha(c) || helper.isDollarSymbol(c) || helper.isUnderscore(c) || helper.isNum(c) || helper.isDot(c)){
+                        }
+                        else if(helper.isRightCurlyBrace(c)){
+                            toSave = false;
+                            toContinue = false;
+
+                            state = states.start;
+                            tokenType = tokenTypes.placeholderName;
+                        }
+                        else{
+                            throw new Error("parse error at position " + (this.index - 1));
                         }
                         break;
                 }
