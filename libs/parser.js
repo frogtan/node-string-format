@@ -43,7 +43,7 @@ module.exports = function(){
                             state = states.placeholderIndex;
                         }
                         else{
-                            throw new Error("parse error at " + (index - 1));
+                            throw new Error("parse error at " + (this.index - 1));
                         }
                         break;
                     case states.decodeRightCurlyBraceStart:
@@ -53,7 +53,7 @@ module.exports = function(){
                             toContinue = false;
                         }
                         else{
-                            throw new Error("parse error at " + (index - 1));
+                            throw new Error("parse error at " + (this.index - 1));
                         }
                         break;
                     case states.normalString:
