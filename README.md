@@ -20,13 +20,16 @@ node-string-format v0.0.2
  - placeholder with property name
 this module also support extract info from context by property name, eg:
 
+
     console.log(format("module name: {moduleName},  author: {authorName}", 
         {
            moduleName : "node-string-format",
            authorName : "frog"
        })
     );
+    
 or nested properties:
+
     console.log(format("module name: {module.name},  author: {author.name}", 
         {
             module : {
@@ -37,6 +40,7 @@ or nested properties:
             }
        })
     );
+    
 	or even drill info from multiple objects
     console.log(format("module name: {moduleName},  author: {authorName}", 
           {moduleName : "node-string-format"},
