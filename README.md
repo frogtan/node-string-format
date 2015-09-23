@@ -1,6 +1,6 @@
 # node-string-format
 
-本模块的目的是用于扩展node自带的util.format
+本模块用于扩展node自带的util.format
 
 #1 **安装**
 `npm install node-string-format`
