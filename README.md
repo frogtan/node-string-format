@@ -49,3 +49,56 @@
 	format("{{");//{
 	format("}}");//}
 
+
+
+# node-string-format
+
+this is a module to extend node's builtin util.format
+
+#1 **Install**
+`npm install node-string-format`
+
+#2 **Features**
+###*	Index Placeholder
+	var format = require("node-string-format");
+	format("Hi, guys, I'm {0}", "node-string-format");
+will outputs
+
+	Hi, guys, I'm node-string-format
+###*  Name Placeholder
+Look at this small, weird example:
+
+	var student = {
+		studentName : "Mike",
+		age : 18
+	};
+	
+	var mathClass = {
+		className : "Math",
+		score : 100
+	};
+	
+In order to get this
+	
+	"My name is Mike, I got 100 marks in mathematics"
+	
+We can do like this with name placeholder
+	
+	var composedEntity = {
+		studentName : student.studentName,
+		mathScore : mathClass.score
+	};
+	
+	format("My name is {studentName}, I got {mathScore} marks in mathematics", composedEntity);
+	
+In above code, we made a new entity contains properties we want at first, but this is not necessary.node-string-format can exact infomation from different entities.
+
+	format("My name is {studentName}, I got {score} marks in mathematics", student, mathClass);
+
+*note:if property with the same name exists in multiple entities, the foremost will be used*
+
+###* If "{" or "}" is wanted when formatting, you can do like this:
+
+	format("{{");//{
+	format("}}");//}
+
