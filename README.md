@@ -91,7 +91,7 @@ We can do like this with name placeholder
 	
 	format("My name is {studentName}, I got {mathScore} marks in mathematics", composedEntity);
 	
-In above code, we made a new entity contains properties we want at first, but this is not necessary.node-string-format can exact infomation from different entities.
+In above code, we made a new entity contains properties we want at first, but this is not necessary.node-string-format can extract information from different entities.
 
 	format("My name is {studentName}, I got {score} marks in mathematics", student, mathClass);
 
